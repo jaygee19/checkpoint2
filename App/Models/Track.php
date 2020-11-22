@@ -74,6 +74,11 @@ class Track extends Model
         $this->votes++;
     }
 
+    public function takeVote()
+    {
+        $this->votes--;
+    }
+
     /**
      * @return mixed
      */

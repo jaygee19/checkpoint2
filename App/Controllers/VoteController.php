@@ -24,6 +24,15 @@ class VoteController extends AControllerBase
         die();
     }
 
+    public function takeVote()
+    {
+        $trc = Track::getOne($_POST['vot']);
+        $trc->takeVote();
+        $trc->save();
+        header("Location: http://localhost/checkpoint2?c=Vote&a=results");
+        die();
+    }
+
     public function results()
     {
         return Track::getAll();

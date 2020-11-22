@@ -15,6 +15,10 @@
                             <input type="submit" class="submitbut" value="Vote">
                             <input type="hidden" name="vot" value=<?= $track->getId()?>>
                         </form>
+                        <form action="?c=Vote&a=takeVote" method="post">
+                            <input type="submit" class="submitbut" value="Unvote">
+                            <input type="hidden" name="vot" value=<?= $track->getId()?>>
+                        </form>
                     </div>
                 </div>
             </div>
