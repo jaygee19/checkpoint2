@@ -7,7 +7,7 @@
         if ($counter < 11) {
         ?>
         <ul class="list-group">
-            <li class="list-group-item"> <?= $counter ?> . <?= $track->getArtist() ?> <?= " - " ?> <?= $track->getNameTrack() ?>
+            <li class="list-group-item"> <b> <?= $counter ?> . <?= $track->getArtist() ?> <?= " - " ?> <?= $track->getNameTrack() ?> </b>
                 <span class="votes"> <b> <?= $track->getVotes()?> </b> </span>
             </li>
         </ul>
