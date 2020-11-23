@@ -99,10 +99,14 @@ class VoteController extends AControllerBase
         {
             $artistErrors[] = "Name of artist is too short";
         }
+        if (preg_match("/['\.\*\!\;\}\{\+\@\#\%\^\&\|']/", $artist))
+        {
+            $artistErrors[] = "Invalid character";
+        }
 
         if (preg_match("/['\.\*\!\;\}\{\+\@\#\%\^\&\|']/", $nameTrack))
         {
-            $nameTrackErrors[] = "Invalid char";
+            $nameTrackErrors[] = "Invalid character";
         }
 
         return count($artistErrors) > 0 || count($nameTrackErrors) > 0 ? [$artistErrors,$nameTrackErrors] : null;
